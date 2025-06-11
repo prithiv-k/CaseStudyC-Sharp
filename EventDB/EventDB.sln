@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35828.75 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{AF283EED-18DC-4C8C-9093-CAD93A0E579B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventDb", "EventDb\EventDb.csproj", "{2129AA0B-A811-46FB-A884-BAD18AF201AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppUI", "EventDb\AppUI.csproj", "{2129AA0B-A811-46FB-A884-BAD18AF201AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
