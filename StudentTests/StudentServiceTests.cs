@@ -51,7 +51,7 @@ namespace StudentTests
             Assert.That(result.Name, Is.EqualTo("Alice"));
         }
 
-        [Test]
+        [Test]//negative tc
         public void GetStudentByRollNo_InvalidRollNo_ThrowsException()
         {
             Assert.That(() => _studentService.GetStudentByRollNo(0), Throws.TypeOf<ArgumentException>());
@@ -70,7 +70,7 @@ namespace StudentTests
             Assert.That(result.RollNo, Is.EqualTo(3));
         }
 
-        [Test]
+        [Test]//negative tc
         public void GetStudentByName_NullOrEmptyName_ThrowsException()
         {
             Assert.That(() => _studentService.GetStudentByName(""), Throws.TypeOf<ArgumentException>());
@@ -108,7 +108,7 @@ namespace StudentTests
             _mockRepository.Verify(r => r.Update(student), Times.Once);
         }
 
-        [Test]
+        [Test]//Negative tc
         public void UpdateStudent_NullStudent_ThrowsException()
         {
             Assert.That(() => _studentService.UpdateStudent(null), Throws.TypeOf<ArgumentNullException>());
@@ -123,7 +123,7 @@ namespace StudentTests
             _mockRepository.Verify(r => r.Delete(6), Times.Once);
         }
 
-        [Test]
+        [Test]//negatice tc
         public void DeleteStudent_InvalidRollNo_ThrowsException()
         {
             Assert.That(() => _studentService.DeleteStudent(0), Throws.TypeOf<ArgumentException>());
