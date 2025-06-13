@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MVCContactDirectory.Model;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,10 @@ namespace MVCContactDirectory.Controllers
 {
     public class ContactController : Controller
     {
-        static List<ContactInfo> contacts = new List<ContactInfo>();
+        static List<ContactInfo> contacts = new List<ContactInfo>
+        {
+            new ContactInfo{ContactId=1,FirstName="Prithiv",LastName="K",CompanyName="Hexaware",EmailId="Prithiv2k03@gmail.com",MobileNo=9876543210,Designation="Developer",}
+        };
 
         public IActionResult ShowContacts()
         {
@@ -15,7 +19,7 @@ namespace MVCContactDirectory.Controllers
         }
 
         public IActionResult GetContactById(int id)
-        {
+        {   
             var contact = contacts.FirstOrDefault(c => c.ContactId == id);
             if (contact == null)
                 return NotFound();
@@ -26,6 +30,14 @@ namespace MVCContactDirectory.Controllers
         [Route("AddContact", Name = "AddContact")]
         public IActionResult AddContact()
         {
+            ViewBag.DesignationList = new List<SelectListItem>
+    {
+        new SelectListItem { Text = "Manager", Value = "Manager" },
+        new SelectListItem { Text = "Developer", Value = "Developer" },
+        new SelectListItem { Text = "Tester", Value = "Tester" },
+        new SelectListItem { Text = "HR", Value = "HR" }
+    };
+
             return View();
         }
 

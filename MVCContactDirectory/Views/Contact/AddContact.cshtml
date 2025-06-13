@@ -1,48 +1,55 @@
 ﻿@model MVCContactDirectory.Model.ContactInfo
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+
 <html>
 <head>
+    <meta charset="utf-8" />
     <title>Add New Contact</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <a asp-action="ShowContacts" asp-controller="Contact">Show All Contacts</a>
-    <h3>New Contact</h3>
+    <div class="container mt-5">
+        <a class="btn btn-secondary mb-3" asp-action="ShowContacts" asp-controller="Contact">← Show All Contacts</a>
+        <h3 class="mb-4">New Contact</h3>
 
-    <form asp-action="AddContact" method="post">
-        <div>
-            <label asp-for="FirstName">First Name:</label>
-            <input type="text" asp-for="FirstName" placeholder="Enter First Name" />
-        </div>
+        <form asp-action="AddContact" method="post">
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" placeholder="Enter First Name" />
+            </div>
 
-        <div>
-            <label asp-for="LastName">Last Name:</label>
-            <input type="text" asp-for="LastName" placeholder="Enter Last Name" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="LastName" class="form-label">Last Name</label>
+                <input asp-for="LastName" class="form-control" placeholder="Enter Last Name" />
+            </div>
 
-        <div>
-            <label asp-for="CompanyName">Company Name:</label>
-            <input type="text" asp-for="CompanyName" placeholder="Enter Company Name" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="CompanyName" class="form-label">Company Name</label>
+                <input asp-for="CompanyName" class="form-control" placeholder="Enter Company Name" />
+            </div>
 
-        <div>
-            <label asp-for="EmailId">Email:</label>
-            <input type="email" asp-for="EmailId" placeholder="Enter Email" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="EmailId" class="form-label">Email</label>
+                <input asp-for="EmailId" class="form-control" placeholder="Enter Email" />
+            </div>
 
-        <div>
-            <label asp-for="MobileNo">Mobile No:</label>
-            <input type="number" asp-for="MobileNo" placeholder="Enter Mobile Number" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="MobileNo" class="form-label">Mobile No</label>
+                <input asp-for="MobileNo" class="form-control" placeholder="Enter Mobile Number" />
+            </div>
 
-        <div>
-            <label asp-for="Designation">Designation:</label>
-            <input type="text" asp-for="Designation" placeholder="Enter Designation" />
-        </div>
+            <div class="mb-4">
+                <label asp-for="Designation" class="form-label">Designation</label>
+                <select asp-for="Designation" asp-items="ViewBag.DesignationList" class="form-select">
+                    <option value="">--Select--</option>
+                </select>
+            </div>
 
-        <div>
-            <input type="submit" value="Add Contact" />
-        </div>
-    </form>
+            <div>
+                <input type="submit" value="Add Contact" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
 </body>
 </html>

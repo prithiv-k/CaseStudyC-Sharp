@@ -1,9 +1,30 @@
 ﻿@model MVCContactDirectory.Model.ContactInfo
 
-<h2>Contact Details</h2>
-<p><strong>ID:</strong> @Model.ContactId</p>
-<p><strong>Name:</strong> @Model.FirstName @Model.LastName</p>
-<p><strong>Company:</strong> @Model.CompanyName</p>
-<p><strong>Email:</strong> @Model.EmailId</p>
-<p><strong>Mobile No:</strong> @Model.MobileNo</p>
-<p><strong>Designation:</strong> @Model.Designation</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <a class="btn btn-secondary mb-3" asp-action="ShowContacts" asp-controller="Contact">← Back to Contact List</a>
+
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4>Contact Details</h4>
+            </div>
+            <div class="card-body">
+                <p class="mb-2"><strong>ID:</strong> @Model.ContactId</p>
+                <p class="mb-2"><strong>Name:</strong> @Model.FirstName @Model.LastName</p>
+                <p class="mb-2"><strong>Company:</strong> @Model.CompanyName</p>
+                <p class="mb-2"><strong>Email:</strong> @Model.EmailId</p>
+                <p class="mb-2"><strong>Mobile No:</strong> @Model.MobileNo</p>
+                <p class="mb-0"><strong>Designation:</strong> @Model.Designation</p>
+                <a href="@Url.Action("ShowContacts", "Contact")" class="btn btn-primary">Back to Contact List</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
