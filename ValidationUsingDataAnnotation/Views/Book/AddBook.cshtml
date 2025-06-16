@@ -1,0 +1,56 @@
+﻿@model ValidationUsingDataAnnotation.Models.Book
+
+<html>
+<head>
+    <title>Add New Book</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-4">
+        <a class="btn btn-secondary mb-3" asp-route="List">Show All Books</a>
+        <h3 class="mb-4 text-center">New Book</h3>
+
+        <form asp-route="SaveBook" method="post">
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Isbn">ISBN:</label>
+                <input class="form-control" type="number" asp-for="Isbn" placeholder="Enter ISBN" />
+                <span asp-validation-for="Isbn" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="BookName">BOOK NAME:</label>
+                <input class="form-control" type="text" asp-for="BookName" placeholder="Enter Book Name" />
+                <span asp-validation-for="BookName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="AuthorName">AUTHOR NAME:</label>
+                <input class="form-control" type="text" asp-for="AuthorName" placeholder="Enter Author Name" />
+                <span asp-validation-for="AuthorName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="PublishedDate">PUBLISHED DATE:</label>
+                <input class="form-control" type="date" asp-for="PublishedDate" placeholder="Enter Date of Publication" />
+                <span asp-validation-for="PublishedDate" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="BookUrl">BOOK URL:</label>
+                <input class="form-control" type="url" asp-for="BookUrl" placeholder="Enter Web URL" />
+                <span asp-validation-for="BookUrl" class="text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                <input class="btn btn-success" type="submit" value="Add Book" />
+            </div>
+        </form>
+    </div>
+    <!-- Client-side validation scripts (only if using jQuery validation) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
+   
+</body>
+</html>
