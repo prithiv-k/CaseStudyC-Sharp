@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Learner Dashboard";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <h1>👨‍🎓 Learner Dashboard</h1>
+    <p class="lead">Welcome to the learner portal. Access your courses and learning materials.</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👤 Update Profile</h5>
+                    <p class="card-text">Manage your account settings</p>
+                    <a href="/Learner/UpdateProfile" class="btn btn-outline-primary">Update Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">🔍 Search Content</h5>
+                    <p class="card-text">Find learning materials</p>
+                    <a href="/Learner/SearchContent" class="btn btn-outline-success">Search Content</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

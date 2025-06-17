@@ -1,0 +1,45 @@
+﻿@model List<CaseStudy_LayoutView.Models.Content>
+@{
+    ViewData["Title"] = "Manage Content";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>📝 Manage Content</h2>
+        <a href="/Trainer/AddContent" class="btn btn-success">Add New Content</a>
+    </div>
+
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var content in Model)
+            {
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@content.Title</h5>
+                            <p class="card-text">@content.Description</p>
+                            <p class="text-muted">Course ID: @content.CourseId</p>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                <button class="btn btn-sm btn-outline-danger">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <div class="alert alert-info">No content available. Add your first content to get started.</div>
+            </div>
+        }
+    </div>
+
+    <a href="/Trainer/Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+</div>

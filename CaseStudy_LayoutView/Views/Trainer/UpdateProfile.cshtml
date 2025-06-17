@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Update Profile - Trainer";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <h2>👤 Update Profile</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" value="Trainer User">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" value="trainer@kaarinfotech.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" value="+91 9876543211">
+                        </div>
+                        <div class="mb-3">
+                            <label for="specialization" class="form-label">Specialization</label>
+                            <input type="text" class="form-control" id="specialization" value="Software Development">
+                        </div>
+                        <div class="mb-3">
+                            <label for="experience" class="form-label">Years of Experience</label>
+                            <input type="number" class="form-control" id="experience" value="5">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                        <a href="/Trainer/Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

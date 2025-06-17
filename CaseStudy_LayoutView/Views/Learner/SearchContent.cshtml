@@ -1,0 +1,73 @@
+﻿@model List<CaseStudy_LayoutView.Models.Content>
+@{
+    ViewData["Title"] = "Search Content";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <h2>🔍 Search Learning Content</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <form asp-action="SearchContent" method="get">
+                <div class="input-group">
+                    <input type="text" name="searchTerm" class="form-control"
+                           placeholder="Search for content..." value="@ViewBag.SearchTerm">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var content in Model)
+            {
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@content.Title</h5>
+                            <p class="card-text">@content.Description</p>
+                            <p class="text-muted">Course ID: @content.CourseId</p>
+                            @if (!string.IsNullOrEmpty(content.ContentUrl))
+                            {
+                                <a href="@content.ContentUrl" class="btn btn-primary btn-sm" target="_blank">Access Content</a>
+                            }
+                            <button class="btn btn-outline-secondary btn-sm">Add to My Learning</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <div class="alert alert-info">
+                    @if (string.IsNullOrEmpty(ViewBag.SearchTerm as string))
+                    {
+                        <text>Enter a search term to find learning content.</text>
+                    }
+                    else
+                    {
+                        <text>No content found for "@ViewBag.SearchTerm". Try a different search term.</text>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    <a href="/Learner/Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+</div>card-title">Company Info</h5>
+<p><strong>Founded:</strong> 2020</p>
+<p><strong>Location:</strong> Karur, Tamil Nadu, India</p>
+<p><strong>Specialization:</strong> Educational Technology</p>
+<p><strong>Team Size:</strong> 50+ Professionals</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

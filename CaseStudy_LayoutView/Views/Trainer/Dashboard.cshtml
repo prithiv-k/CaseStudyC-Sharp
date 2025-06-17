@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Trainer Dashboard";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <h1>👨‍🏫 Trainer Dashboard</h1>
+    <p class="lead">Welcome to the trainer panel. Create and manage your course content.</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👤 Update Profile</h5>
+                    <p class="card-text">Manage your account settings</p>
+                    <a href="/Trainer/UpdateProfile" class="btn btn-outline-primary">Update Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📝 Manage Content</h5>
+                    <p class="card-text">Add, edit, or remove content</p>
+                    <a href="/Trainer/ManageContent" class="btn btn-outline-success">Manage Content</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

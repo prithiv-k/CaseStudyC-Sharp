@@ -1,0 +1,48 @@
+﻿@model CaseStudy_LayoutView.Models.Content
+@{
+    ViewData["Title"] = "Add Content";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <h2>➕ Add New Content</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="AddContent" method="post">
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input asp-for="Title" class="form-control" placeholder="Enter content title">
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="3" placeholder="Enter content description"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="CourseId" class="form-label">Course</label>
+                            <select asp-for="CourseId" class="form-control">
+                                <option value="">Select a course</option>
+                                <option value="1">C# Fundamentals</option>
+                                <option value="2">ASP.NET Core MVC</option>
+                            </select>
+                            <span asp-validation-for="CourseId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="ContentUrl" class="form-label"></label>
+                            <input asp-for="ContentUrl" class="form-control" placeholder="Enter content URL">
+                            <span asp-validation-for="ContentUrl" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-success">Add Content</button>
+                        <a href="/Trainer/ManageContent" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

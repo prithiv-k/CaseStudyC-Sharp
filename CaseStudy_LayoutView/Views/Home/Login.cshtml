@@ -1,0 +1,70 @@
+﻿@model CaseStudy_LayoutView.Models.Login
+@{
+    ViewData["Title"] = "Login";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center">
+                    @switch (Model?.Role)
+                    {
+                        case CaseStudy_LayoutView.Models.UserRole.Admin:
+                            <span class="text-danger">👨‍💼 Admin Login</span>
+                            break;
+                        case CaseStudy_LayoutView.Models.UserRole.Trainer:
+                            <span class="text-success">👨‍🏫 Trainer Login</span>
+                            break;
+                        case CaseStudy_LayoutView.Models.UserRole.Learner:
+                            <span class="text-primary">👨‍🎓 Learner Login</span>
+                            break;
+                        default:
+                            <span>🔐 Login</span>
+                            break;
+                    }
+                </h2>
+
+                <form asp-action="Login" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    @if (Model?.Role != null)
+                    {
+                        <input asp-for="Role" type="hidden" />
+                        <div class="mb-3">
+                            <span class="role-badge role-@Model.Role.ToString().ToLower()">
+                                @Model.Role
+                            </span>
+                        </div>
+                    }
+
+                    <div class="mb-3">
+                        <label asp-for="Username" class="form-label"></label>
+                        <input asp-for="Username" class="form-control" placeholder="Enter username" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-control" placeholder="Enter password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+
+                <div class="mt-3 text-center">
+                    <small class="text-muted">
+                        Demo credentials: Any username/password combination will work
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

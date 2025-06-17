@@ -1,0 +1,39 @@
+﻿@model CaseStudy_LayoutView.Models.Course
+@{
+    ViewData["Title"] = "Add Course";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <h2>➕ Add New Course</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="AddCourse" method="post">
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" placeholder="Enter course name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="3" placeholder="Enter course description"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Duration" class="form-label"></label>
+                            <input asp-for="Duration" class="form-control" type="number" placeholder="Duration in hours">
+                            <span asp-validation-for="Duration" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-success">Add Course</button>
+                        <a href="/Admin/ManageCourses" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

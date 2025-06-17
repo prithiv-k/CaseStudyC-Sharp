@@ -1,0 +1,45 @@
+﻿@model List<CaseStudy_LayoutView.Models.Course>
+@{
+    ViewData["Title"] = "Manage Courses";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>📚 Manage Courses</h2>
+        <a href="/Admin/AddCourse" class="btn btn-success">Add New Course</a>
+    </div>
+
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var course in Model)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@course.Name</h5>
+                            <p class="card-text">@course.Description</p>
+                            <p class="text-muted">Duration: @course.Duration hours</p>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                <button class="btn btn-sm btn-outline-danger">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <div class="alert alert-info">No courses available. Add your first course to get started.</div>
+            </div>
+        }
+    </div>
+
+    <a href="/Admin/Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+</div>

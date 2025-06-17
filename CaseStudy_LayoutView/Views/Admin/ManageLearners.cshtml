@@ -1,0 +1,53 @@
+﻿@model List<CaseStudy_LayoutView.Models.User>
+@{
+    ViewData["Title"] = "Manage Learners";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>👨‍🎓 Manage Learners</h2>
+        <button class="btn btn-success">Add New Learner</button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var learner in Model)
+                    {
+                        <tr>
+                            <td>@learner.FullName</td>
+                            <td>@learner.Username</td>
+                            <td>@learner.Email</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                <button class="btn btn-sm btn-outline-danger">Remove</button>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4" class="text-center">No learners found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a href="/Admin/Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+</div>

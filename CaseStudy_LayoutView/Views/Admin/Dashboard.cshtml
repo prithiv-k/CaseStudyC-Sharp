@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<div class="container">
+    <h1>👨‍💼 Admin Dashboard</h1>
+    <p class="lead">Welcome to the administrator panel. Manage your LMS from here.</p>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👤 Update Profile</h5>
+                    <p class="card-text">Manage your account settings</p>
+                    <a href="/Admin/UpdateProfile" class="btn btn-outline-primary">Update Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📚 Manage Courses</h5>
+                    <p class="card-text">Add, edit, or remove courses</p>
+                    <a href="/Admin/ManageCourses" class="btn btn-outline-success">Manage Courses</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👨‍🏫 Manage Trainers</h5>
+                    <p class="card-text">Add or remove trainers</p>
+                    <a href="/Admin/ManageTrainers" class="btn btn-outline-warning">Manage Trainers</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <h5 class="
