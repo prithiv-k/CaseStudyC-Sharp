@@ -19,7 +19,7 @@ namespace MVCContactDirectory.Controllers
         }
 
         public IActionResult GetContactById(int id)
-        {   
+        {
             var contact = contacts.FirstOrDefault(c => c.ContactId == id);
             if (contact == null)
                 return NotFound();
